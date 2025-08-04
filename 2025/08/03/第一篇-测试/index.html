@@ -6,15 +6,15 @@
   
   <title>第一篇-测试 | 随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="深度学习安全 | 后端开发 | 技术思考">
+  <meta name="description" content="一、前期调研二、环境配置 安装 Node.js123# Windows&#x2F;Mac：官网下载 LTS 版本https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;download# 验证安装：node -v 和 npm -v 安装 Git 并配置—-这一步其他博客比较多，可以搜一下，按步骤操作12345  # Windows：官网下载安装  https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;download">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一篇-测试">
 <meta property="og:url" content="http://example.com/2025/08/03/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="随笔">
-<meta property="og:description" content="深度学习安全 | 后端开发 | 技术思考">
+<meta property="og:description" content="一、前期调研二、环境配置 安装 Node.js123# Windows&#x2F;Mac：官网下载 LTS 版本https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;download# 验证安装：node -v 和 npm -v 安装 Git 并配置—-这一步其他博客比较多，可以搜一下，按步骤操作12345  # Windows：官网下载安装  https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;download">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-08-03T13:35:16.000Z">
-<meta property="article:modified_time" content="2025-08-03T13:35:16.899Z">
+<meta property="article:modified_time" content="2025-08-04T02:47:56.823Z">
 <meta property="article:author" content="水与酒精与咖啡因">
 <meta name="twitter:card" content="summary">
   
@@ -99,11 +99,41 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一、前期调研"><a href="#一、前期调研" class="headerlink" title="一、前期调研"></a>一、前期调研</h2><h2 id="二、环境配置"><a href="#二、环境配置" class="headerlink" title="二、环境配置"></a>二、环境配置</h2><ol>
+<li>安装 Node.js<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Windows/Mac：官网下载 LTS 版本</span><br><span class="line">https://nodejs.org/zh-cn/download</span><br><span class="line"># 验证安装：node -v 和 npm -v</span><br></pre></td></tr></table></figure></li>
+<li>安装 Git 并配置—-这一步其他博客比较多，可以搜一下，按步骤操作<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  # Windows：官网下载安装</span><br><span class="line">  https://nodejs.org/zh-cn/download</span><br><span class="line">  # 配置全局用户信息</span><br><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure></li>
+<li>安装 Hexo 脚手架 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo --version  # 验证安装</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="三、项目初始化"><a href="#三、项目初始化" class="headerlink" title="三、项目初始化"></a>三、项目初始化</h2><ol>
+<li>创建博客项目 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog  # 初始化项目</span><br><span class="line">cd my-blog</span><br><span class="line">npm install        # 安装依赖</span><br></pre></td></tr></table></figure>
+ 目录结构说明：<br> - source&#x2F;_posts&#x2F;：存放 Markdown 文章<br> - themes&#x2F;：主题文件夹<br> - public&#x2F;：执行 hexo g 后生成的静态文件</li>
+<li>本地预览–这里本身只是为了本地预览，部署之后就不需要了 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server  # 访问 http://localhost:4000</span><br></pre></td></tr></table></figure></li>
+<li>安装主题 hexo主题网站 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> （以 Butterfly 为例）<ol>
+<li>安装主题 <code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</code></li>
+<li>然后修改根目录下配置文件_config.yml：<code>theme: butterfly  # 启用主题</code></li>
+<li>安装渲染插件<code>npm install hexo-renderer-pug hexo-renderer-stylus --save #避免页面空白问题</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="四、部署到-GitHub-Pages"><a href="#四、部署到-GitHub-Pages" class="headerlink" title="四、部署到 GitHub Pages"></a>四、部署到 GitHub Pages</h2><ol>
+<li>创建 GitHub 仓库<ol>
+<li>仓库名必须为 <strong>&lt;用户名&gt;.github.io</strong>，且设为公有</li>
+</ol>
+</li>
+<li>安装部署插件 <code>npm install hexo-deployer-git --save</code></li>
+<li>修改根目录下配置文件_config.yml： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git  # SSH 地址</span><br><span class="line">  branch: main  # 分支</span><br></pre></td></tr></table></figure></li>
+<li>一键部署 <code>hexo clean &amp;&amp; hexo g -d</code> 或 <code>hexo clean; hexo g; hexo d</code>，即可访问访问：<code>https://yourname.github.io</code></li>
+<li>如果部署失败的话，可以尝试将配置中的仓库地址改为http地址<code>repo: https://github.com/用户名/仓库名.git</code></li>
+</ol>
+<h2 id="五、内容发布以及更新"><a href="#五、内容发布以及更新" class="headerlink" title="五、内容发布以及更新"></a>五、内容发布以及更新</h2><ol>
+<li>可以通过<code>hexo new &quot;文章标题&quot; </code> 的形式创建新内容，md文件生成在<code>\source\_posts\</code>中</li>
+<li>重复执行 <code>hexo g -d </code>即可同步到线上</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/03/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%B5%8B%E8%AF%95/" data-id="cmdvrmpnc0001q0dj8cbp5tum" data-title="第一篇-测试" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2025/08/03/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%B5%8B%E8%AF%95/" data-id="cmdwinfol0001jsdj64xf5dtr" data-title="第一篇-测试" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
