@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CURE Code-Aware Neural Machine Translation for Automatic Program Repair | 随笔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="论文基本情况： 论文名： CURE: Code-Aware Neural Machine Translation for Automatic Program Repair  作者：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)  作者：Nan Ji">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CURE Code-Aware Neural Machine Translation for Automatic Program Repair">
+<meta property="og:url" content="http://example.com/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/CURE%20Code-Aware%20Neural%20Machine%20Translation%20for%20Automatic%20Program%20Repair/index.html">
+<meta property="og:site_name" content="随笔">
+<meta property="og:description" content="论文基本情况： 论文名： CURE: Code-Aware Neural Machine Translation for Automatic Program Repair  作者：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)  作者：Nan Ji">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-08-10T14:07:31.227Z">
+<meta property="article:modified_time" content="2025-08-10T14:11:00.472Z">
+<meta property="article:author" content="水与酒精与咖啡因">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">随笔</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">学习过程中的一点记录以及生活分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-论文阅读笔记/待整理/CURE Code-Aware Neural Machine Translation for Automatic Program Repair" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/CURE%20Code-Aware%20Neural%20Machine%20Translation%20for%20Automatic%20Program%20Repair/" class="article-date">
+  <time class="dt-published" datetime="2025-08-10T14:07:31.227Z" itemprop="datePublished">2025-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CURE Code-Aware Neural Machine Translation for Automatic Program Repair
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="论文基本情况："><a href="#论文基本情况：" class="headerlink" title="论文基本情况："></a>论文基本情况：</h1><blockquote>
+<h2 id="论文名：-CURE-Code-Aware-Neural-Machine-Translation-for-Automatic-Program-Repair"><a href="#论文名：-CURE-Code-Aware-Neural-Machine-Translation-for-Automatic-Program-Repair" class="headerlink" title="论文名： CURE: Code-Aware Neural Machine Translation for Automatic Program Repair"></a><strong>论文名</strong>： CURE: Code-Aware Neural Machine Translation for Automatic Program Repair</h2></blockquote>
+<blockquote>
+<h2 id="作者：Nan-Jiang-Purdue-University-ThiBaud-Lutellier-University-of-Waterlor-Lin-Tan-Purdue-University"><a href="#作者：Nan-Jiang-Purdue-University-ThiBaud-Lutellier-University-of-Waterlor-Lin-Tan-Purdue-University" class="headerlink" title="作者：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)"></a><strong>作者</strong>：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)</h2></blockquote>
+<blockquote>
+<h2 id="作者：Nan-Jiang-Purdue-University-ThiBaud-Lutellier-University-of-Waterlor-Lin-Tan-Purdue-University-1"><a href="#作者：Nan-Jiang-Purdue-University-ThiBaud-Lutellier-University-of-Waterlor-Lin-Tan-Purdue-University-1" class="headerlink" title="作者：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)"></a><strong>作者</strong>：Nan Jiang(Purdue University), ThiBaud Lutellier(University of Waterlor), Lin Tan(Purdue University)</h2></blockquote>
+<blockquote>
+<h2 id="来源：2021-ICSE"><a href="#来源：2021-ICSE" class="headerlink" title="来源：2021 ICSE"></a><strong>来源</strong>：2021 ICSE</h2></blockquote>
+<blockquote>
+<h2 id="论文主题：程序修复，程序语言处理"><a href="#论文主题：程序修复，程序语言处理" class="headerlink" title="论文主题：程序修复，程序语言处理"></a><strong>论文主题</strong>：程序修复，程序语言处理</h2></blockquote>
+<h1 id="一句话论文："><a href="#一句话论文：" class="headerlink" title="一句话论文："></a>一句话论文：</h1><blockquote>
+<p>本文将程序语言预训练的GPT模型与翻译模型结合起来，共同作为自动程序修复(ARP, Auromatic Program Repair)模型工作，并设计了一种Code-aware定向搜索策略，通过关注可编译且与原长度类似的补丁，缩小搜索空间，提高生成补丁工的可编译率，使质量高的补丁排序更靠前，提高了修复成功率。</p>
+</blockquote>
+<h1 id="重点与思考："><a href="#重点与思考：" class="headerlink" title="重点与思考："></a>重点与思考：</h1><blockquote>
+<p>这篇文章作为2021年的SOTA，将其他领域内的一些技术迁移到自动修复这一问题上，在两个常用数据集上取得了比较好的效果，并为自动化漏洞修复这一方向中存在的一些问题，提供了部分解决思路。</p>
+</blockquote>
+<blockquote>
+<h2 id="1-程序语言的数据以及词表问题"><a href="#1-程序语言的数据以及词表问题" class="headerlink" title="1. 程序语言的数据以及词表问题"></a><strong>1. 程序语言的数据以及词表问题</strong></h2></blockquote>
+<blockquote>
+<blockquote>
+<p>由于标识符命名过于自由，导致可能存在的命名空间无限大，使词汇表的大小过大。对于模型训练来说，过大的词表将导致训练效率的下降，时间成本过大；另一方面，如果单纯地将一个标识符标注为一个向量，100个变量标注100个，忽视了变量命名间的关系和可能存在的规律，可能还会影响模型的性能。目前，存在一种方法是提取出所有的变量名，维护一张变量表，记录对应的位置，在训练时将其全部标注为一个向量，在生成补丁时，根据位置，查找之前维护的表，将原变量名导入到补丁中，但该方法相当于直接舍弃掉变量名的含义，这一点是跟人的直观印象是不符的，且生成后再赋予变量名，这一行为的正确率应该也不会特别高。<br>本文使用的策略是采用子词划分策略，类似于Bert等模型中的分词方法。将一个组合词分割成不同的部分，比如max_here被分成’max’，’_’，’here’三部分，这样的话，词表大小被大大缩减，保留了变量名的部分语义信息，并且，是后续对生成补丁进行筛选的基础<br>此外，在之前的其他研究中，修复的过程中都只关注出现问题的代码行，而忽视了整体代码段的内容，本文中规避了这个问题，充分利用了出错行之前的代码，提高修复成功的概率。<br>虽然，词表以及变量名表示的问题，虽然感觉非常重要，但是，并没有看到相关的研究，这应该是之后的一个研究的方向</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="2-模型训练与推理流程"><a href="#2-模型训练与推理流程" class="headerlink" title="2. 模型训练与推理流程"></a><strong>2. 模型训练与推理流程</strong></h2></blockquote>
+<blockquote>
+<blockquote>
+<p>文中提出的APR模型包含两部分，预训练的GPT模型和神经网络翻译模型(Context-aware neural machine translation (CoNuT))，一起作为APR模型进行补丁生成。因此，模型训练阶段也分为两部分，GPT预训练和ARP微调。<br>在GPT训练阶段，使用的数据是从github上提取的所有Java项目，需要注意的是，由于微调阶段的数据来源也是开源项目，因此，需要避免使用出现Bug的代码，即该阶段使用的训练数据需要使用2006年前的提交信息，也不需要关注其中是否包含漏洞等信息，因为，预训练部分主要目的是使模型能够学到人类编写的代码的特点。任务是下一单词预测。<br>在微调阶段，使用的数据是CoCoNuT所使用的数据，涵盖了训练阶段使用的项目。微调过程中，将GPT和CoNuT结合起来，一起微调。损失包含了两部分，$L_{NMT}$和$\lambda L_{GPT}$，前者是在已知Bug行和Bug行前的内容情况下，调整两部分模型参数，最大化预测下一个单词的平均概率(应该类似于自然语言生成任务)，后者是生成的补丁时正确补丁的概率。<br>在推理阶段，首先会把整体代码段输入到GPT模型中，提取代码特征，生成上下文代码表示和Bug行代码表示，其次，会把Bug前的代码，以及目标生成的字符的前一个字符输入模型中，提取相应特征，一种四部分代码表示，共同作为代码生成的输入数据，推断下一个字符，随后，递归生成整个补丁。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="3-筛选和搜索策略"><a href="#3-筛选和搜索策略" class="headerlink" title="3. 筛选和搜索策略"></a><strong>3. 筛选和搜索策略</strong></h2><blockquote>
+<p>生成补丁后，如何在生成的众多代码中选择正确的补丁也是一个非常重要的问题，本文使用的是定向搜索算法，并对其做了一些改进。主要采取了两种策略，有效性验证和长度控制。后者是基于一个统计学概念，经统计发现，正确补丁与原错误代码间长度差距，大多数均不超过5，因此，在使用模型生成补丁时，更倾向于选择与原长度类似的代码，且惩罚过短或过长的补丁。该策略还有一个好处是，搜索的空间更深，更容易生成补丁。<br>前者则是对定向搜索算法的改进，Vanilla beam search算法没有对搜索树进行处理，仅考虑概率问题，可能会选择无法编译的代码。而改进后的Code-aware beam search 会首先根据生成的子词，判断某一条路径走下去，是否能形成正确的标识符，剪枝掉会导致错误的路径，减少了搜索空间，且可编译性大大增加。</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/CURE%20Code-Aware%20Neural%20Machine%20Translation%20for%20Automatic%20Program%20Repair/" data-id="cme5ri1hu0000qodj7vcy3qcv" data-title="CURE Code-Aware Neural Machine Translation for Automatic Program Repair" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/%E8%AE%BA%E6%96%87%E9%80%9F%E8%AF%BB-DEAR%20A%20Novel%20Deep%20Learning-based%20Approach%20for%20Automated%20Program%20Repair/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          论文速读-DEAR A Novel Deep Learning-based Approach for Automated Program Repair
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/Defending%20Pre-trained%20Language%20Models%20from%20Adversarial%20Word%20Substitution%20Without%20Performance%20Sacrifice/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">第一篇-测试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">August 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/%E8%AE%BA%E6%96%87%E9%80%9F%E8%AF%BB-DEAR%20A%20Novel%20Deep%20Learning-based%20Approach%20for%20Automated%20Program%20Repair/">论文速读-DEAR A Novel Deep Learning-based Approach for Automated Program Repair</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/CURE%20Code-Aware%20Neural%20Machine%20Translation%20for%20Automatic%20Program%20Repair/">CURE Code-Aware Neural Machine Translation for Automatic Program Repair</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/Defending%20Pre-trained%20Language%20Models%20from%20Adversarial%20Word%20Substitution%20Without%20Performance%20Sacrifice/">第一篇-测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%BE%85%E6%95%B4%E7%90%86/Virtual%20Adversarial%20Training%20A%20Regularization%20Method%20for%20Supervised%20and%20Semi-Supervised%20Learning/">第一篇-测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/03/GitHub%20Pages%20+%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">GitHub Pages + Hexo 搭建个人博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 水与酒精与咖啡因<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
